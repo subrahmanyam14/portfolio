@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=Caudex&display=swap");
+
+:root {
+  --clr-background: rgb(247, 244, 244);
+  --clr-gray: rgb(119, 114, 114);
+  --font-main: "Caudex", serif;
+  --clr-dark-gray: #262626;
+  --clr-dark-black: #121212;
+  --clr-dark-text: rgb(226, 225, 225);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-main);
+  margin: 0 auto;
+}
+
+.wrapper {
+  background-color: var(--clr-background);
+}
+
+.container {
+  width: 95%;
+  margin: 0 auto;
+}
+
+/* -------------------------Header/Navbar */
+header {
+  padding-top: 30px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.navbar {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 60px;
+}
+
+.navbar__ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style-type: none;
+  width: 100%;
+  max-width: 500px;
+}
+
+.navbar__ul .name {
+  font-size: 23px;
+  font-weight: 600;
+}
+
+.navbar__ul a {
+  text-decoration: none;
+  color: rgb(8, 3, 3);
+}
+
+.navbar__ul li {
+  background: rgba(235, 230, 230, 0.3);
+  width: 50%;
+  text-align: center;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.link,
+.portfolio__header,
+footer h2 {
+  text-transform: uppercase;
+}
+
+.header__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+  margin-bottom: 15px;
+  padding-bottom: 2rem;
+  margin: 0 auto;
+  max-width: 80%;
+}
+.header__container img {
+  width: 70%;
+  border:0.5px solid rgb(246, 227, 227);
+}
+
+.header__text {
+  font-weight: 200;
+  width: 100%;
+  margin-top: 20px;
+  line-height: 1.5rem;
+  text-align: center;
+}
+/* End of Header/Navbar--------------------- */
+
+/* Portfolio section ----------------------- */
+.portfolio,
+.portfolio__container {
+  display: flex;
+}
+.portfolio {
+  background-color: rgb(238, 237, 237);
+  margin-top: 2.5rem;
+  padding-top: 3rem;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.portfolio__header {
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.portfolio__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+  flex-direction: column;
+  width: 95%;
+}
+
+.card {
+  margin: 1.5rem 0;
+  max-width: 360px;
+  /*   box-shadow: 5px 5px 5px #fbbebe; */
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 5px 0px,
+    rgba(54, 54, 54, 0.5) 0px 2px 15px 0px;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.card img {
+  width: 50%;
+  margin-bottom: 1rem;
+}
+
+.card h2 {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  font-size: 20px;
+}
+
+.card p {
+  font-weight: 200;
+}
+
+.text-container {
+  width: 70%;
+  margin: 0 auto;
+}
+
+/* End of services------------------------ */
+
+/* Skills --------------------------------- */
+.skills {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.skills h2 {
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+.skills-container {
+  display: flex;
+  margin-top: 30px;
+  flex-direction: column;
+  text-align: center;
+}
+
+.skills__item {
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.skills__item img:hover {
+  transform: scale(1.1);
+  transition: ease-out 0.3s;
+}
+
+.skills img {
+  max-width: 80px;
+  margin-bottom: -5px;
+}
+
+/* Footer --------------------------------- */
+
+
+footer {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding-top: 3rem;
+  width: 100%;
+  background-color: var(--clr-background);
+}
+
+.footer__nav {
+  width: 100%;
+  display: flex;
+  min-height: 30px;
+  padding: 10px;
+  bottom: 0;
+  text-align: center;
+  justify-content: space-between;
+}
+
+footer h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+footer p {
+  font-weight: 200;
+  color: var(--clr-gray);
+}
+
+.footer__text-container1 p {
+  color: var(--clr-gray);
+}
+
+.footer__nav-links {
+  display: none;
+}
+
+.footer__text-container {
+  width: 80%;
+  margin: 0 auto;
+  padding-bottom: 2rem;
+}
+
+.footer__text-container1 {
+  padding-bottom: 3rem;
+}
+
+.footer__nav-links li {
+  padding: 5px 10px 10px 10px;
+  text-decoration: none;
+}
+
+.footer__nav-links li a {
+  text-decoration: none;
+  color: black;
+  text-transform: uppercase;
+}
+
+.footer__nav-hr {
+  width: 100%;
+  margin: 0 auto;
+  border-color: rgb(255, 255, 255);
+}
+
+footer p {
+  max-width: 400px;
+  padding-bottom: 1rem;
+  margin: 0 auto;
+}
+
+.to-top {
+  list-style-type: none;
+  margin-right: 10px;
+  justify-self: flex-end;
+}
+
+.to-top a {
+  text-decoration: none;
+  color: black;
+}
+
+@media screen and (min-width: 768px) {
+  .header__container {
+    min-width: 600px;
+  }
+
+  header {
+    padding-bottom: 4rem;
+  }
+  .navbar {
+    width: 100%;
+    display: flex;
+    bottom: 0;
+    justify-content: space-between;
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+
+  .navbar ul {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .navbar__ul li {
+    padding: 5px 15px 15px 10px;
+    background-color: transparent;
+  }
+
+  .header__container {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-bottom: 15px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .header__container img {
+    max-width: 300px;
+  }
+
+  .header__container p {
+    max-width: 350px;
+    text-align: left;
+  }
+
+  /* Portfolio section at 768----------- */
+  .portfolio__container {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1165px;
+  }
+
+  .card {
+    min-width: 300px;
+    width: 100%;
+  }
+
+  .card img {
+    max-width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  /* Skills at 768 ------------------- */
+
+  .skills {
+    width: 80%;
+    text-align: center;
+    margin-top: 4rem;
+  }
+
+  .skills-container {
+    flex-direction: row;
+    justify-content: center;
+    flex-grow: 1;
+    width: 100%;
+    margin-bottom: 80px;
+  }
+
+  .skills h2 {
+    margin-bottom: -10px;
+    text-transform: uppercase;
+    font-size: 2rem;
+  }
+
+  .skills__item {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  /* Footer at 768px ---------------- */
+  footer {
+    display: flex;
+    align-items: center;
+  }
+
+  footer p {
+    max-width: 400px;
+    padding-bottom: 1rem;
+  }
+
+  .phone,
+  .email ,.facebook,.instagram,.linkedin,.github,.whatsapp{
+    margin-right: 8px;
+  }
+
+  .footer__nav {
+    width: 95%;
+  }
+
+  .footer__nav h2 {
+    text-transform: none;
+  }
+
+  .footer__nav-links {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    margin-left: auto;
+  }
+
+  .footer__nav-links li {
+    padding: 5px 10px 10px 10px;
+    text-decoration: none;
+  }
+
+  .footer__nav-hr {
+    width: 95%;
+    border-color: rgb(241, 233, 233);
+  }
+  .to-top {
+    display: none;
+  }
+}
+
+/* min width 1024 ---------------------------------- */
+@media screen and (min-width: 1024px) {
+  .navbar,
+  .navbar__ul,
+  .header__container {
+    display: flex;
+  }
+  .navbar {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .navbar__ul {
+    flex-direction: row;
+  }
+
+  .navbar__ul li {
+    background-color: transparent;
+  }
+
+  .navbar__ul .link {
+    margin: 0;
+  }
+
+  .header__container {
+    flex-direction: row-reverse;
+    margin-bottom: 15px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .header__container img {
+    max-width: 330px;
+  }
+
+  .header__text {
+    max-width: 400px;
+    text-align: center;
+  }
+
+  /* Portfolio section------------------------- */
+  .portfolio__container {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .card {
+    max-width: 300px;
+  }
+
+  .card img {
+    max-width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .card p {
+    font-weight: 200;
+  }
+  /* End Portfolo------------------------------ */
+}
+
+/* Dark mode------------------------------- */
+button[class="darkmode"] {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  background-color: rgb(240, 238, 238);
+  border: 1px solid rgb(43, 43, 43);
+  border-radius: 50%;
+}
+
+.darkmode .portfolio {
+  background-color: var(--clr-dark-black);
+  color: var(--clr-dark-text);
+}
+
+.darkmode footer {
+  background-color: var(--clr-dark-black);
+  color: var(--clr-dark-text);
+}
+
+.darkmode .wrapper {
+  background-color: var(--clr-dark-black);
+  color: var(--clr-dark-text);
+}
+
+.darkmode .navbar__ul li {
+  color: var(--clr-dark-text);
+  background-color: transparent;
+}
+
+.darkmode a[href] {
+  color: var(--clr-dark-text);
+}
+/* satish */
+
+        </style>
+    </head>
+    <body>
+        <div class='wrapper'>
+            <div class="container">
+              <header id="home">
+                <nav class="navbar">
+                  <h2 class='name'>BALA SUBRAHMANYAM DUSANAPUDI</h2>
+                  <ul class="navbar__ul">
+                    <li class='link'><a href="#home">Home</a></li>
+                    <li class='link'><a href="#portfolio">About</a></li>
+                    <li class='link'><a href="#skills">Skills</a></li>
+                    <li class='link'><a href="#contact">Contact</a></li>
+                    <li>
+                      <!-- Dark Theme Toggle  -->
+                      <button class='darkmode'><i class="fas fa-moon"></i></button>
+                    </li>
+                  </ul>
+                </nav>
+                <div class="header__container">
+                  <img src="https://th.bing.com/th/id/R.f9134655b53cbeaeb00664b04371b9b0?rik=iLjmFR%2fd8%2fv3kQ&riu=http%3a%2f%2fwww.clipartbest.com%2fcliparts%2fyTk%2fg7g%2fyTkg7gyEc.png&ehk=dG%2bhqEnV6MwCvpcdxcGG%2bCx3qbqYyAjMSIEH6q%2b8mF0%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1" alt="profile-image" >
+                  <div class="header__text__container">
+                    <p class="header__text">Hi! I'm Bala Subrahmanyam Dusanapudi from Andhra pradesh.I'm a web developer and Java trainer.I'm passionate to learn new technologies and things and also quick learner..</p>
+                  </div>
+                </div>
+              </header>
+            </div>
+            <main class="portfolio" id='portfolio'>
+                <h2 class='portfolio__header'>About us</h2>
+                <div class="portfolio__container">
+                    <article class='card'>
+                        <img src='https://th.bing.com/th/id/R.983fc4e6fa080fa1d287359ef24b0021?rik=RMjLFgSbjs%2f3kQ&riu=http%3a%2f%2fadventistchaplaincyinstitute.org%2fwp-content%2fuploads%2f2016%2f03%2fEducation.jpg&ehk=STxX1dQrD5YRAeunNNx5qv1R3eYriS82tl%2fcMuKShOU%3d&risl=&pid=ImgRaw&r=0' alt="Education" height="60px" width="60px">
+                        <div class="text-container">
+                            <h2>EducationQualification</h2>
+                            <table>
+                                <tr>
+                                <td>B.Tech<br>CSE</t>
+                                <td>Swarnandhra college of engineering and technology</td>
+                                <td>8.2</td></tr>
+                                <tr>
+                                <td>intermediate </t>
+                                <td>Sri Surya Junior College</td>
+                                <td>9.8</td></tr>
+                                <tr> <td>SSC</td><td>Viveka E.M High School</td><td>9.5
+                                </td></tr>
+                            </table>
+                        </div>
+                    </article><article class='card'>
+                        <img src="hai.jpg" >
+                        
+                        <div class="text-container">
+                          <h2>Hobbies</h2><br>
+                          <p>Reading Books</p>
+                          <p>Swimming</p>
+                          <p>Travelling</p>
+                          <p>Innovations</p>
+                          <p>Learning</p>
+                        </div>
+                      </article>
+                
+                      <article class='card'>
+                        <img src='https://cdn-icons-png.flaticon.com/512/1055/1055645.png' alt="app">
+                        <div class="text-container">
+                          <h2>Certificates</h2>
+                          <p>Cloud fundamentals</p>
+                          <p>Cloud Architecture</p>
+                          <p>Machine learning</p>
+                          <p>Data Analytics</p>
+                          <p>Cisco Networking</p>
+                          <p>Cisco CyberSecurity</p>
+                        </div>
+                      </article>
+                
+                      <article class='card'>
+                        <img src='https://cdn-icons-png.flaticon.com/512/4257/4257674.png' alt="app">
+                        <div class="text-container">
+                          <h2>Internships</h2>
+                          <p>AICTE EDUSKILS</p>
+                          <P>CISCO VIRTUAL </P>
+                          <!-- <p>DODO COMPANY</p>
+                          <p>COINCENT COMPANY</p>
+                          <p>IBM COMPANY</P>
+                          <P>APSCHE</P> --><br><br><br>
+                        </div>
+                      </article>
+                
+                      <article class='card'>
+                        <img src='https://cdn-icons-png.flaticon.com/512/5956/5956494.png' alt="gallery">
+                        <div class="text-container">
+                          <h2>Project Gallery</h2>
+                          <p>MASTER LENSES</p>
+                          <p>DESKTOP APPLICATION</p>
+                          <p>PORTFOLIO</p>
+                          <P>SCIENTIFIC CALCULATOR</p>
+                          <!-- <p>CAPTOWN PROJECT</p> -->
+                        </div>
+                      </article>
+                
+                      <article class='card'>
+                        <img src='SUBBU.jpg' alt="RESUME">
+                        <div class="text-container">
+                          <h2>CLICK HERE </h2><br>
+                          <h4><a href="https://drive.google.com/file/d/115Oz3h3b6PS7H0PCvjJGEyHyo8hJHEr1/view?usp=drivesdk">RESUME</a></h4><br><br>
+                          <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> -->
+                        </div>
+                      </article>
+                </div>
+                <section class='skills' id='skills'>
+                    <h2>Skills</h2>
+                    <article class="skills-container">
+                      
+                      <div class="skills__item" data-aos='fade-up'>
+                        <img src="https://cdn-icons-png.flaticon.com/512/1051/1051277.png" alt="HTML5">
+                        <p>HTML5</p>
+                      </div>
+              
+                      <div class="skills__item" data-aos='fade-up'>
+                        <img src="https://cdn-icons-png.flaticon.com/512/732/732190.png" alt="css">
+                        <p>CSS3</p>
+                      </div><div class="skills__item" data-aos='fade-up'>
+                        <img src="https://th.bing.com/th?id=OIP.NkrzxcDe1CvTom1GCzC3-QHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2" alt="C">
+                        <p>C</p>
+                      </div><div class="skills__item" data-aos='fade-up'>
+                        <img src="https://sdtimes.com/wp-content/uploads/2018/03/cpppp.png" alt="C">
+                        <p>C++</p>
+                      </div>
+              
+                      <div class="skills__item" data-aos='fade-up'>
+                        <img src="https://th.bing.com/th?id=OIP.fVZ7LrVSgKw1_ysTnYX15QHaHZ&w=250&h=249&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2" alt="python">
+                        <p>Python</p>
+                      </div>
+              
+                      <div class="skills__item" data-aos='fade-up'>
+                        <img src="https://th.bing.com/th?id=OIP.NPmwG7GRQUbWBp1Luyg1FwHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2" alt="java">
+                        <p>Java</p>
+                      </div>
+                    </article>
+                  </section>
+                  <footer>
+                    <div class="wrapper">
+                      <div class="footer__text-container" id='contact'>
+                        <h2>Contact</h2>
+                        <p>Lets connect if you want to collaborate...</p>
+                      </div>
+                      <div class="footer__text-container1">
+                        <section class='skills'>
+                            <article class="skills-container">
+                              <div class="skills__item" data-aos='fade-up'>
+                                <a href="#"><img src="https://www.freeiconspng.com/uploads/official-facebook-icon-png-4.png" alt="Facebook"></a>
+                                <p>Facebook</p>
+                              </div>
+                              <div class="skills__item" data-aos='fade-up'>
+                                <a href="https://instagram.com/_.subrahmanyam._?utm_source=qr&igshid=NGExMmI2YTkyZg%3D%3D"><img src="https://www.bing.com/th?id=OIP.enG2QUteotudVRb6SlpX8wHaHZ&pid=3.1&cb=&w=300&h=300&p=0" alt="Instagram"></a>
+                                <p>Instagram</p>
+                              </div>
+                              <div class="skills__item" data-aos='fade-up'>
+                                <a href="https://www.linkedin.com/in/bala-subrahmanyam-dusanapudi-995490256"><img src="https://th.bing.com/th?id=OIP.ozDiSGJlUqI6815cRlJiNAHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2" alt="Linkedin"></a>
+                                <p>Linkedin</p>
+                              </div>
+                              <div class="skills__item" data-aos='fade-up'>
+                                <a href="https://github.com/subrahmanyam14"><img src="https://th.bing.com/th?id=OIP.eoZPB2gfGH-1ckaL_JSZdwAAAA&w=248&h=251&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2" alt="Github"></a>
+                                <p>Github</p>
+                              </div>
+                              <div class="skills__item" data-aos='fade-up'>
+                                <a href="https://wa.me/qr/BQHUQ5WDCHOKE1 "><img src="https://th.bing.com/th?id=OIP.nAbDsb1syeLZ7rz98JdQGQHaHb&w=249&h=250&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2" alt="Whatsapp"></a>
+                                <p>Whatsapp</p>
+                              </div>
+                              <div class="skills__item" data-aos='fade-up'>
+                                <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox?compose=new"><img src="data:image/jpeg;base64,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" alt="Email"></a>
+                                <p>Email</p>
+                              </div>
+                            </article>
+                          </section>
+                        </div>
+                    </div>
+                    <hr class='footer__nav-hr'>
+                    <nav class="footer__nav">
+                      <h2>BALA SUBRAHMANYAM  </h2>
+                      <ul class='footer__nav-links'>
+                        <li><a href="#home">HOME</a></li>
+                        <li><a href="#portfolio">PROJECTS</a></li>
+                        <li class='link'><a href="#skills">SKILLS</a></li>
+                        <li><a href="#contact">CONTACT</a></li>
+                      </ul>
+                      <p class='to-top'><a href="#top"><strong>BACK TO TOP</strong></a></p>
+                    </nav>
+                  </footer>
+                </main>
+              </div>
+            <script>
+                let btn = document.querySelector(".darkmode");
+
+btn.addEventListener("click", () => {
+  if (btn.innerHTML === `<i class="fas fa-moon"></i>`) {
+    btn.innerHTML = `<i class="fas fa-sun"></i>`;
+    btn.style.color = "orange";
+    btn.style.backgroundColor = "white";
+    document.body.classList.add("darkmode");
+  } else {
+    btn.innerHTML = `<i class="fas fa-moon"></i>`;
+    btn.style.color = "white";
+    btn.style.backgroundColor = "black";
+    document.body.classList.remove("darkmode");
+  }
+});
+
+            </script>
+    </body>
+</html>
